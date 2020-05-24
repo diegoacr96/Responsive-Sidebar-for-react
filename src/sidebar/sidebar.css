@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+:root{
+    font-family: 'lato';
+    font-size: 16px;
+    --background-primary: #403D39;
+    --background-secondary: #EB5E28;
+    --text-primary: #CCC5B9;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    color: var(--text-primary);
+}
+
+.sidebar {
+    background-color: var(--background-primary);
+    position: fixed;
+}
+
+.sidebar-bar{
+    list-style: none;
+    color: var(--text-primary);
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    display: flex;
+}
+
+.bar-item {
+    margin: 0;
+    padding: 1rem 0;
+}
+
+.brand{
+    font-weight: bold;
+    font-size: 1.5rem;
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+.bar-link{
+    display: inline;
+    opacity: 0;
+    transition: opacity 200ms ease;
+}
+
+@media screen and (max-width: 600px){
+
+    .sidebar{
+        bottom: 0;
+        width: 100vh;
+        height: 5rem;
+    }
+
+    .sidebar-bar{
+        position: fixed;
+        padding: 0;
+        margin: 0;
+        justify-content: space-around;
+        width: 100%;
+    }
+
+    .link-list{
+        height: 100%;
+        padding: 1.5rem 0;
+    }
+
+    .icon{
+        width: 100%;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    .brand-logo{
+        display: none;
+    }
+}
+@media screen and (min-width: 600px){
+    .sidebar{
+        width: 5rem;
+        height: 100vh;
+        transition: 200ms;
+    }
+
+    .sidebar-bar{
+        padding: 1rem 0;
+        flex-direction: column;
+    }
+
+    .bar-item{
+        position: initial; 
+        width: 100%;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: s;
+    }
+
+    .link-list:last-child{
+        margin-top: auto;
+    }
+
+    .sidebar:hover {
+        width: 15rem;
+    }
+
+    .sidebar:hover .bar-item{
+        width: 100%;
+    }
+
+    .sidebar:hover .bar-link{
+        display: inline;
+        justify-self: center;
+        opacity: 1;
+    }
+
+    .fas, .fab {
+        padding: 1rem 1.5rem;
+    }
+
+    .bar-item:hover{
+        background: var(--background-secondary);
+        color: floralwhite;
+    }
+
+    .link-list:last-child .icon{
+        transform: rotate(0deg);
+        transition: 1s; 
+    }
+    .sidebar-bar:hover .link-list:last-child .icon{
+        transform: rotate(-120deg);
+    }
+}
